@@ -1,0 +1,22 @@
+Execute function at the filter change
+[https://stackoverflow.com/questions/15904230/vbatrigger-macro-on-column-filter]
+
+```
+Private Sub Worksheet_Calculate()
+
+If ActiveSheet.Name = "6000v2OUT" Then
+ Range("N4").Value = Calculate_OR(Range("I7:I300"))
+ Range("O4").Value = Calculate_OR(Range("L7:L300"))
+ Range("P4").Value = Calculate_OR(Range("M7:M300"))
+ 
+ 
+' https://excelmacromastery.com/excel-vba-array/#Get_the_Array_Size
+
+'    If Cells(Rows.Count, 1).End(xlUp).Row = 1 Then
+'        MsgBox "No data available"
+'    Else
+'        MsgBox "There are filtering results"
+'    End If
+End If
+End Sub
+```
